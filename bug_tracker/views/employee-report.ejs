@@ -1,0 +1,51 @@
+<%- include('header'); -%>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid">
+      <h1 class="mt-4">EMPLOYEE REPORT</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Employee details</li>
+      </ol>
+
+
+
+    </div>
+
+  </main>
+  <div class="kol">
+    <table class="table table-hover ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">S.No.</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Position</th>
+          <th scope="col">D.O.B</th>
+          <th scope="col">Email</th>
+          <th scope="col">Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <%  for(i=0;i < employees.length;i++){ %>
+
+            <% num = i+1%>
+            <tr>
+
+                <th scope="row"><%=num%> </th>
+                <td><%=employees[i].firstName%></td>
+                  <td><%=employees[i].lastName%></td>
+                <td><%=employees[i].position%></td>
+                 <td><%=employees[i].dob%></td>
+                <td><%=employees[i].email%></td>
+                  <td><%=employees[i].contact%></td>
+            </tr>
+
+        <%}%>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <%- include('footer'); -%>

@@ -1,0 +1,156 @@
+<%- include('header'); -%>
+
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid">
+      <h1 class="mt-4">Dashboard</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+      <div class="row">
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-primary text-white mb-4">
+            <div class="card-body">ADD EMPLOYEE</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+              <a class="small text-white stretched-link" href="/employee-form">Click here</a>
+              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-warning text-white mb-4">
+            <div class="card-body">ADD PROJECT</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+              <a class="small text-white stretched-link" href="/project-form">Click here</a>
+              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-success text-white mb-4">
+            <div class="card-body">ADD TICKET</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+              <a class="small text-white stretched-link" href="/ticket">Click here</a>
+              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-danger text-white mb-4">
+            <div class="card-body">VIEW REPORTS</div>
+            <div class="card-footer d-flex align-items-center justify-content-between">
+              <a class="small text-white stretched-link" href="/bug-report">Click here</a>
+              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <i class="fas fa-chart-bar mr-1"></i>
+                Ticket Types
+            </div>
+            <div class="card-body"><canvas id="myBarChart1" width="100%" height="40"></canvas></div>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <i class="fas fa-chart-bar mr-1"></i>
+                Ticket Status
+            </div>
+            <div class="card-body"><canvas id="myBarChart2" width="100%" height="40"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+
+  </main>
+  <script>
+
+    <% countHigh=0 %>
+    <% countModerate=0 %>
+    <% countLow = 0%>
+    <% for( i=0 ; i<bugReport.length ; i++){ %>
+      <% type = bugReport[i].ticketType %>
+
+      <% if(type == 'High'){ %>
+        <% countHigh = countHigh + 1 %>
+      <%} %>
+      <% if (type == 'Moderate'){ %>
+        <% countModerate = countModerate + 1  %>
+      <% } %>
+      <% if (type == 'Low'){ %>
+      <%  countLow = countLow + 1 %>
+      <%} %>
+    <%} %>
+    <% var typeArray = [countHigh, countModerate, countLow] %>
+    var myBarChart1 = document.getElementById('myBarChart1').getContext('2d');
+    var statusChart1 = new Chart(myBarChart1, {
+      type: 'bar',
+      data: {
+        labels: ['High', 'Moderate', 'Low'],
+        datasets:[{
+          label: 'Number of projects',
+          data:<%- JSON.stringify(typeArray); %>,
+          backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)'
+                    // 'rgba(75, 192, 192, 0.2)',
+                    // 'rgba(153, 102, 255, 0.2)',
+                    // 'rgba(255, 159, 64, 0.2)'
+                ],
+        }],
+
+      },
+
+      options:{}
+    });
+  </script>
+  <script>
+
+    <% countOngoing=0 %>
+    <% countCompleted=0 %>
+    <% countUpcoming = 0%>
+    <% for( i=0 ; i<bugReport.length ; i++){ %>
+      <% status = bugReport[i].ticketStatus %>
+
+      <% if(status == 'Ongoing'){ %>
+        <% countOngoing = countOngoing + 1 %>
+      <%} %>
+      <% if (status == 'Completed'){ %>
+        <% countCompleted = countCompleted + 1  %>
+      <% } %>
+      <% if (status == 'Upcoming'){ %>
+      <%  countUpcoming = countUpcoming + 1 %>
+      <%} %>
+    <%} %>
+    <% var statusArray = [countOngoing, countCompleted, countUpcoming] %>
+    var myBarChart = document.getElementById('myBarChart2').getContext('2d');
+    var statusChart = new Chart(myBarChart, {
+      type: 'bar',
+      data: {
+        labels: ['Ongoing', 'Completed', 'Upcoming'],
+        datasets:[{
+          label: 'Number of projects',
+          data:<%- JSON.stringify(statusArray); %>,
+          backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)'
+                    // 'rgba(75, 192, 192, 0.2)',
+                    // 'rgba(153, 102, 255, 0.2)',
+                    // 'rgba(255, 159, 64, 0.2)'
+                ],
+        }],
+
+      },
+
+      options:{}
+    });
+  </script>
+
+  <%- include('footer'); -%>

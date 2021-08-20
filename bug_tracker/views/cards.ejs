@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="/css/styles_cards.css" rel="stylesheet" />
+
+
+
+  </head>
+  <body>
+
+    <div class="contents">
+    <div class="col-md-6 quarter"style="z-index:9">
+      <div class="card border-dark mb-3" style="text-align:center;margin:25px">
+        <div class="card-header bg-dark" style="text-align:center;font-weight:bold;color:white">BUG INFO </div>
+        <div class="card-body text-dark">
+          <h5 class="card-title"><%= bugReport.bugTitle %></h5>
+          <ul class="list-group list-group-flush">
+<div class="row">
+  <div class="col">
+    <li class="list-group-item">PROJECT<br><%=bugReport.projectName.projName %></li>
+    <li class="list-group-item">TICKET STATUS<br><%=bugReport.ticketStatus %></li>
+    <li class="list-group-item">START DATE <br><%=bugReport.startDate%></li>
+  </div>
+  <div class="col">
+    <li class="list-group-item">ASSIGNED DEVELOPER<br><%=bugReport.employees[0].firstName%></li>
+    <li class="list-group-item">TICKET PRIORITY<br><%=bugReport.ticketType %></li>
+    <li class="list-group-item">DESCRIPTION<br><%=bugReport.ticketDescription %></li>
+  </div>
+
+</div>
+ </ul>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-md-6 quarter" style="background-color:black;z-index:8">
+      <!-- <h1>Upload Image</h1>
+
+      <form action="/upload" method="post" enctype="multipart/form-data">
+              <input type="file" accept="image/*" name="photo" >
+              <input type="submit" value="upload">
+      </form> -->
+
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+      <div class="container center "  >
+      	<div class="row">
+      		<div class="col-md-12">
+      			<h6 class="white">ADD ATTACHMENT</h6>
+      			<p class="white">In this example, submit is allowed only in case the user uploads a valid image file.</p>
+      		</div>
+      	</div>
+
+      	<form  method="post" action="/upload" enctype="multipart/form-data">
+      		<div class="row">
+      			<div class="col-md-6 col-md-offset-3 center">
+      				<div class="btn-container"style="margin-left:50px;width:150%">
+      					<!--the three icons: default, ok file (img), error file (not an img)-->
+      					<h1 class="imgupload" ><i class="fa fa-file-image-o"></i></h1>
+      					<h1 class="imgupload ok"><i class="fa fa-check"></i></h1>
+      					<h1 class="imgupload stop"><i class="fa fa-times"></i></h1>
+      					<!--this field changes dinamically displaying the filename we are trying to upload-->
+      					<p id="namefile">Only pics allowed! (jpg,jpeg,bmp,png)</p>
+      					<!--our custom btn which which stays under the actual one-->
+      					<!-- <button type="button" id="btnup" class="btn btn-primary btn-lg">Browse for your pic!</button> -->
+      					<!--this is the actual file input, is set with opacity=0 beacause we wanna see our custom one-->
+
+          <label id="btnup"class="btn btn-primary btn-lg" style="width:70%">
+    			<input type="file"  name="image" accept="image/*">
+          <label>
+          <div class="row">
+            <div class="col-md-12">
+              <!--the defauld disabled btn and the actual one shown only if the three fields are valid-->
+              <input type="submit" value="upload" class="btn btn-primary" id="submitbtn" style="z-index:10">
+              <button type="submit" class="btn btn-default" >Submit! <i class="fa fa-minus-circle"></i></button>
+            </div>
+          </div>
+          </form>
+          </div>
+
+      				</div>
+      			</div>
+      		</div>
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="col-md-6 quarter" style="background-color:yellow;">test</div>
+    <div class="col-md-6 quarter" style="background-color:green;z-index:-9">test</div>
+
+
+  </body>
+</html>

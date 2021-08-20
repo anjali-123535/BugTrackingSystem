@@ -1,0 +1,72 @@
+<%- include('header'); -%>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid">
+      <h1 class="mt-4">Bug Report</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Bug details </li>
+      </ol>
+
+    </div>
+
+  </main>
+
+  <div class="kol">
+    <table class="table table-hover ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">S.No.</th>
+
+          <th scope="col">Bug Title</th>
+          <th scope="col">Project Name</th>
+          <th scope="col">Start Date</th>
+          <!-- <th scope="col">Employee</th> -->
+          <th scope="col">Ticket Type</th>
+          <th scope="col">Status</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+
+        <%  for(i=0;i < bugReports.length;i++) { %>
+        <% num = i+1%>
+        <% status=bugReports[i].ticketType %>
+        <tr>
+
+          <th scope="row"><%=num%></th>
+          <td><%=bugReports[i].bugTitle%></td>
+          <td><%=bugReports[i].projectName.projName%></td>
+          <td><%=bugReports[i].startDate%></td>
+
+          <td><span <% if (status == 'Moderate') { %> class='badge badge-pill badge-success' <% } else if (status == 'High'){ %> class='badge badge-pill badge-danger' <% }else {%> class='badge badge-pill  badge-info' <% } %>>
+              <%=bugReports[i].ticketType%> </span></td>
+          <td> <%=bugReports[i].ticketStatus%></td>
+
+
+          <td>
+            <form action="/bug-form-edit" method="post">
+              <button type="submit" name="update" class="btn btn-link" value="<%=bugReports[i]._id %>"><i class="fas fa-edit"></i></button>
+            </form>
+          </td>
+
+          <td>
+            <form action="/delete" method="post">
+              <button type="submit" name="ticketId" class="btn btn-link" value="<%=bugReports[i]._id %>"><i class="fas fa-trash-alt"></i></button>
+            </form>
+          </td>
+          <td>
+            <form action="/view-details" method="post">
+              <button type="submit" name="detailId" class="btn btn-link" value="<%=bugReports[i]._id %>"><i class="fas fa-external-link-alt"></i> </button>
+            </form>
+          </td>
+        </tr>
+
+        <%}%>
+
+      </tbody>
+    </table>
+  </div>
+
+  <%- include('footer'); -%>

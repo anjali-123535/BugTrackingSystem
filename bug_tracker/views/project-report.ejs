@@ -1,0 +1,52 @@
+<%- include('header'); -%>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid">
+      <h1 class="mt-4">Project Report</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Project details </li>
+      </ol>
+
+    </div>
+
+  </main>
+
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+      <th scope="col">S.No.</th>
+      <th scope="col"> Name</th>
+      <th scope="col"> Type</th>
+      <th scope="col">Project Manager</th>
+      <th scope="col">Client </th>
+      <th scope="col">Front end Tech</th>
+      <th scope="col">Back end Tech</th>
+      <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%  for(i=0;i < projects.length;i++){ %>
+        <% num = i+1%>
+        <tr>
+             <th scope="row"> <%=num%></th>
+            <td><%=projects[i].projName%></td>
+              <td><%=projects[i].projType%></td>
+            <td><%=projects[i].projManager%></td>
+             <td><%=projects[i].clientName%></td>
+            <td><%=projects[i].fTech%></td>
+              <td><%=projects[i].dbTech%></td>
+              <td><%=projects[i].projDescription%></td>
+        </tr>
+
+    <%}%>
+
+    </tbody>
+
+  </table>
+
+
+  <div class="kol">
+
+  </div>
+
+  <%- include('footer'); -%>

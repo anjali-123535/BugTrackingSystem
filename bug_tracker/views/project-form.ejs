@@ -1,0 +1,72 @@
+<%- include('header'); -%>
+<div id="layoutSidenav_content">
+  <main>
+    <% if(message){ %>
+    <div style="text-align: center" class="alert alert-<%=message.type%>">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong><%= message.intro %></strong> <%=message.message%>
+    </div>
+    <%  } %>
+    
+    <div class="container-fluid">
+      <h1 class="mt-4">Project Form</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Fill the correct details</li>
+      </ol>
+      <form action="/project-form" method="post">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label >Project Name</label>
+      <input type="text" class="form-control" placeholder="Project name" name="projName">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Client Name</label>
+      <input type="text" class="form-control" placeholder="Client name" name="clientName">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label >Project type</label>
+      <input type="text" class="form-control" placeholder="Please select" name="projType">
+    </div>
+    <div class="form-group col-md-6">
+      <label >Project manager</label>
+      <input type="text" class="form-control" placeholder="Project manager" name="projManager">
+    </div>
+
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Front end technology</label>
+      <input type="text" class="form-control" placeholder="technology name" name="fTech">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Database technology</label>
+      <input type="text" class="form-control" placeholder="technology name" name="dbTech">
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label>Project description</label>
+    <textarea class="form-control" name="projDescription"></textarea>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+        <button type="submit" class="btn btn-primary">Add project</button>
+    </div>
+    <div class="form-group col-md-3">
+        <input type='button' value='View project report' class="btn btn-primary" onclick="document.location.href='/project-report';"/>
+    </div>
+
+</form>
+
+
+    </div>
+
+  </main>
+
+  <%- include('footer'); -%>

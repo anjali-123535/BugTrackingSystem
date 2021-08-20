@@ -1,0 +1,244 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" type="text/css" href="/css/util.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<body>
+  <div class="container-login100" style="background-image: url('/assets/img/bug.jpg');">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+      <form class="login100-form validate-form" action="/login" method="post">
+
+
+
+
+        <span class="login100-form-title p-b-37">
+          <p><i class="fas fa-bug fa-5x "></i></p><br>
+           Sign In
+        </span>
+        <div class="wrap-input100 validate-input m-b-20" data-validate="Enter your email">
+          <input class="input100" type="email" name="username" placeholder="email">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
+          <input class="input100" type="password" name="password" placeholder="password">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" type="submit">
+            Sign In
+          </button>
+        </div>
+        <div class="text-center p-t-57 p-b-20">
+          <span class="txt1">
+            Or login with
+          </span>
+        </div>
+        <div class="flex-c p-b-11" >
+
+          <a href="/auth/google" class="login100-social-item">
+            <img src="assets/img/google.png" alt="GOOGLE">
+          </a>
+        </div>
+        <div class="text-center">
+          <a href="/sign-up" class="txt2 hov1">
+            Sign Up
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="dropDownSelect1"></div>
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendor/animsition/js/animsition.min.js"></script>
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/select2/select2.min.js"></script>
+  <script src="vendor/daterangepicker/moment.min.js"></script>
+  <script src="vendor/daterangepicker/daterangepicker.js"></script>
+  <script src="vendor/countdowntime/countdowntime.js"></script>
+  <script src="js/main.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" type="text/css" href="/css/util.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<body>
+  <div class="container-login100" style="background-image: url('/assets/img/bug.jpg');">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+      <form  action="/login" method="POST" class="login100-form validate-form">
+
+
+
+
+        <span class="login100-form-title p-b-37">
+          <p><i class="fas fa-bug fa-5x "></i></p><br>
+           Sign In
+        </span>
+        <!-- <form action="/login" method="POST"> -->
+        <div class="wrap-input100 validate-input m-b-20" data-validate="Enter employee name ">
+          <input class="input100" type="text" name="empName" placeholder="employee name">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
+          <input class="input100" type="text" name="username" placeholder="username or email">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
+          <input class="input100" type="password" name="password" placeholder="password">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" type="submit">
+            Sign In
+          </button>
+        </div>
+      <!-- </form> -->
+        <div class="text-center p-t-57 p-b-20">
+          <span class="txt1">
+            Or login with
+          </span>
+        </div>
+        <div class="flex-c p-b-11">
+
+          <a href="/auth/google" class="login100-social-item">
+            <img src="assests/img/google.png" alt="GOOGLE">
+          </a>
+        </div>
+        <div class="text-center">
+          <a href="/register" class="txt2 hov1">
+            Sign Up
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="dropDownSelect1"></div>
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendor/animsition/js/animsition.min.js"></script>
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/select2/select2.min.js"></script>
+  <script src="vendor/daterangepicker/moment.min.js"></script>
+  <script src="vendor/daterangepicker/daterangepicker.js"></script>
+  <script src="vendor/countdowntime/countdowntime.js"></script>
+  <script src="js/main.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Secrets</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap-social.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<div class="container mt-5">
+  <h1>Login</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-dark">Login</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html> -->

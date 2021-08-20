@@ -1,0 +1,129 @@
+<%- include('header'); -%>
+<div id="layoutSidenav_content">
+  <main>
+    <% if(message){ %>
+    <div style="text-align: center" class="alert alert-<%=message.type%>">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong><%= message.intro %></strong> <%=message.message%>
+    </div>
+    <%  } %>
+
+    <div class="container-fluid">
+      <h1 class="mt-4">Employee Form</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Fill the correct details</li>
+      </ol>
+      <form action="/employee-form" method="post">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="firstName" placeholder="First name" autocomplete="off">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="lastName" placeholder="Last name" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label>Date of birth</label>
+            <input type="text" class="form-control" placeholder="Date of birth" name="dob" autocomplete="off">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label>Gender</label>
+            <select class="custom-select" name="gender">
+              <option selected>Please select</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Employee ID</label>
+            <input type="text" class="form-control" name="empId" placeholder="Enter the Employee ID" autocomplete="off">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label>Position/Department</label>
+            <select class="custom-select" name="position">
+              <option selected>Please select</option>
+              <option value="Project Manager">Project Manager</option>
+              <option value="Senior Developer">Senior Developer</option>
+              <option value="Junior Developer">Junior Developer</option>
+              <option value="Tester">Tester</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+
+
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" autocomplete="off">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label>Contact No.</label>
+            <input type="text" class="form-control" placeholder="Contact no." name="contact" autocomplete="off">
+          </div>
+
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="" name="address" autocomplete="off">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity" name="city">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control" name="state">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip" name="zip">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              All the details are correct.
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <button type="submit" class="btn btn-primary">Add employee</button>
+          </div>
+          <div class="form-group col-md-3">
+            <input type='button' value='View employee report' class="btn btn-primary" onclick="document.location.href='/employee-report';" />
+          </div>
+      </form>
+
+
+    </div>
+
+  </main>
+
+
+
+  <%- include('footer'); -%>

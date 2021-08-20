@@ -1,0 +1,134 @@
+<%- include('header'); -%>
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid">
+      <h1 class="mt-4">Edit bug report</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">edit the details</li>
+      </ol>
+      <form action="/updateTicket" method="post">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label >Bug Title</label>
+      <input type="text" class="form-control" placeholder="enter title" name="bugTitle" value="<%=bugReport.bugTitle%>" >
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Start date</label>
+      <input type="text" class="form-control" placeholder="enter start date" name="startDate" value="<%=bugReport.startDate%>">
+    </div>
+  </div>
+  <div class="form-row">
+    <!-- <div class="form-group col-md-6">
+      <label  >Project name</label>
+      <select class="custom-select" name="projectName">
+        <option selected>Select project</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div> -->
+
+    <div class="form-group col-md-6">
+      <label >Project Name</label>
+      <select class="custom-select" name="projectName" >
+        <option selected><%=bugReport.projectName.projName%></option>
+        <%  for(i=0;i < projects.length;i++){ %>
+        <option value="<%=projects[i].projName%>"> <%=projects[i].projName%> </option>
+        <%}%>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Deadline</label>
+      <input type="text" class="form-control" placeholder="enter the expected deadline" name="deadline" value="<%=bugReport.deadline%>">
+    </div>
+
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label >Ticket Type</label>
+      <select class="custom-select" name="ticketType" >
+        <option selected><%=bugReport.ticketType%></option>
+        <option value="High">High </option>
+        <option value="Moderate">Moderate</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label >Ticket status</label>
+      <select class="custom-select" name="ticketStatus">
+        <option selected><%=bugReport.ticketStatus%></option>
+        <option value="Completed">Completed</option>
+        <option value="Ongoing">Ongoing</option>
+        <option value="Upcoming">Upcoming</option>
+      </select>
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+    <!-- <div class="form-group col-md-4">
+      <label >Employee 1</label>
+      <input type="text" class="form-control" placeholder="enter the employee">
+    </div> -->
+    <div class="form-group col-md-4">
+      <label  >Employee 1</label>
+      <select class="custom-select" name="emp1">
+        <option selected><%=bugReport.employees[0].firstName%></option>
+        <%  for(i=0;i < employees.length;i++){ %>
+        <option value="<%=employees[i].firstName%>"> <%=employees[i].firstName%> </option>
+        <%}%>
+      </select>
+    </div>
+
+    <div class="form-group col-md-4">
+      <label  >Employee 2</label>
+      <select class="custom-select" name="emp2">
+        <option selected><%=bugReport.employees[1].firstName%></option>
+        <%  for(i=0;i < employees.length;i++){ %>
+        <option value="<%=employees[i].firstName%>"> <%=employees[i].firstName%> </option>
+        <%}%>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label >Employee 3</label>
+      <select class="custom-select" name="emp3" >
+        <option selected><%=bugReport.employees[2].firstName%></option>
+        <%  for(i=0;i < employees.length;i++){ %>
+        <option value="<%=employees[i].firstName%>"> <%=employees[i].firstName%> </option>
+        <%}%>
+      </select>
+    </div>
+
+
+  </div>
+
+
+
+  <div class="form-group">
+    <label name="ticketDescription">Ticket description</label>
+    <textarea class="form-control" ></textarea>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </div>
+    <div class="form-group col-md-3">
+        <input type='button' value='View bug report' class="btn btn-primary" onclick="document.location.href='/bug-report';"/>
+    </div>
+
+  </div>
+
+
+
+</form>
+
+
+    </div>
+
+  </main>
+
+  <%- include('footer'); -%>
